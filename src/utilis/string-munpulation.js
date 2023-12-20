@@ -57,3 +57,8 @@ export const transformOpportunityForForm = (opportunity) => {
 
   return transformedOpportunity;
 };
+
+
+export const getImageUrl = (path) =>{
+  return new URL(`/public/${path.substring(path.lastIndexOf('/') + 1)}`, import.meta.url).href;
+};

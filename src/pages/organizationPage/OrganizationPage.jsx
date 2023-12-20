@@ -17,11 +17,12 @@ import OrganizationDetails from './components/OrganizationDetails';
 import OrganizationOpportunities from '../../components/OrganizationOpportunities';
 import { useNavigate } from 'react-router-dom';
 
-const imageUrls = [
-  '../../public/volunteering.jpg',
-  '../../public/kids.jpg',
-  '../../public/images.png',
-  '../../public/Volunteer_kate1.webp'
+
+const imagePaths = [
+  'volunteering.jpg',
+  'kids.jpg',
+  'images.png',
+  'Volunteer_kate1.webp'
 ];
 
 
@@ -33,8 +34,8 @@ const OrganizationPage = () => {
 
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * imageUrls.length);
-    setRandomImage(imageUrls[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * imagePaths.length);
+    setRandomImage(imagePaths[randomIndex]);
   }, []);
 
   useEffect(() => {

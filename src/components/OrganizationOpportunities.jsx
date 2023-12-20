@@ -16,7 +16,7 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import PlaceIcon from '@mui/icons-material/Place';
 import OpportunityForm from './OpportunityForm';
-import {transformOpportunityForForm,stringAvatar} from '../utilis/string-munpulation'
+import {transformOpportunityForForm,stringAvatar,getImageUrl} from '../utilis/string-munpulation'
 
 
 const OpportunityList = ({ opportunityIds,randomImage }) => {
@@ -108,7 +108,7 @@ const OpportunityList = ({ opportunityIds,randomImage }) => {
             <CardContent>
               <List sx={{ width: '100%', display: 'flex', alignItems: 'center' }}>
               <ListItem sx={{ display: 'flex', alignItems: 'center'}}>
-                <img src={randomImage} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
+                <img src={getImageUrl(randomImage)} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
               </ListItem>
                 <div>
                   <ListItem disablePadding sx={{ flexGrow: 1 }}>
@@ -147,7 +147,7 @@ const OpportunityList = ({ opportunityIds,randomImage }) => {
             <DialogTitle>{opportunity.title}</DialogTitle>
             <DialogContent dividers>
             <ListItem sx={{ display: 'flex', alignItems: 'center'}}>
-            <img src={randomImage} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
+            <img src={getImageUrl(randomImage)} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
           </ListItem>
               <Typography variant="subtitle1" color="textSecondary">
                 Place: {opportunity.place}
@@ -156,7 +156,7 @@ const OpportunityList = ({ opportunityIds,randomImage }) => {
               <Typography> Category: {opportunity.category} </Typography>
               <ListItem >
           
-          <AvatarGroup max={2}>
+          <AvatarGroup max={3}>
           {volunteerAvatars.length > 0 &&
                         volunteerAvatars?.map((avatar, avatarIndex) => (
                           <Avatar key={avatarIndex} {...avatar} />

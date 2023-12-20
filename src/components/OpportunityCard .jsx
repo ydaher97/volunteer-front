@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState,useEffect } from 'react';
-import { stringAvatar } from '../utilis/string-munpulation';
+import { stringAvatar,getImageUrl } from '../utilis/string-munpulation';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -20,11 +20,11 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PlaceIcon from '@mui/icons-material/Place'; 
 
 
-const imageUrls = [
-  '../../public/volunteering.jpg',
-  '../../public/kids.jpg',
-  '../../public/images.png',
-  '../../public/Volunteer_kate1.webp'
+const imagePaths = [
+  'volunteering.jpg',
+  'kids.jpg',
+  'images.png',
+  'Volunteer_kate1.webp'
 ];
 
 const OpportunityCard = ({ opportunity }) => {
@@ -35,8 +35,8 @@ const OpportunityCard = ({ opportunity }) => {
   const [volunteerAvatars, setVolunteerAvatars] = useState([]);
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * imageUrls.length);
-    setRandomImage(imageUrls[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * imagePaths.length);
+    setRandomImage(imagePaths[randomIndex]);
   }, []);
 
   useEffect(() => {
@@ -96,7 +96,7 @@ const OpportunityCard = ({ opportunity }) => {
             flexDirection: 'column',
           } }}>
           <ListItem sx={{ display: 'flex', alignItems: 'center'}}>
-            <img src={randomImage} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
+            <img src={getImageUrl(randomImage)} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
           </ListItem>
             <div style={{width:'100%'}}>
             <ListItem disablePadding sx={{ flexGrow: 1 }}>
@@ -148,7 +148,7 @@ const OpportunityCard = ({ opportunity }) => {
         <DialogContent dividers>
           <Typography variant="subtitle1" color="textSecondary">
           <ListItem sx={{ display: 'flex', alignItems: 'center'}}>
-            <img src={randomImage} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
+            <img src={getImageUrl(randomImage)} style={{ maxWidth: '100%', height: '250px' }} alt="Opportunity" />
           </ListItem>
           <Typography> Place: {opportunity.place} </Typography>
           <Typography> Category: {opportunity.category} </Typography>
