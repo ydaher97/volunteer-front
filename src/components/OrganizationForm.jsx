@@ -26,7 +26,7 @@ const OrganizationForm = ({ open, handleClose }) => {
         },
       };
 
-      const response = await axios.post('http://localhost:8080/api/organizations', organizationData, config);
+      const response = await axios.post('https://volunteer-backend-b6ip.onrender.com/api/organizations', organizationData, config);
 
       if (response.status === 201) {
         console.log('Organization created successfully');

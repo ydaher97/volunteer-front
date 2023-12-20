@@ -39,7 +39,7 @@ const OpportunityList = ({ opportunityIds,randomImage }) => {
     try {
       const usersData = await Promise.all(
         volunteerIds.map(async (volunteerId) => {
-          const response = await axios.get(`http://localhost:8080/api/users/${volunteerId}`);
+          const response = await axios.get(`https://volunteer-backend-b6ip.onrender.com/api/users/${volunteerId}`);
           return response.data;
         })
       );
@@ -53,7 +53,7 @@ const OpportunityList = ({ opportunityIds,randomImage }) => {
 
   const handleDeleteOpportunity = async (opportunityId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/opportunities/${opportunityId}`);
+      await axios.delete(`https://volunteer-backend-b6ip.onrender.com/api/opportunities/${opportunityId}`);
       const updatedOpportunities = opportunities.filter(opportunity => opportunity._id !== opportunityId);
       setOpportunities(updatedOpportunities);
     } catch (error) {
@@ -65,7 +65,7 @@ const OpportunityList = ({ opportunityIds,randomImage }) => {
   useEffect(() => {
     const fetchOpportunities = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/opportunities`);
+        const response = await axios.get(`https://volunteer-backend-b6ip.onrender.com/api/opportunities`);
         const filteredOpportunities = response.data.opportunities.filter(opportunity =>
           opportunityIds.includes(opportunity._id)
         );
@@ -89,7 +89,7 @@ const OpportunityList = ({ opportunityIds,randomImage }) => {
 
   const handleUpdateOpportunity = async (updatedOpportunity) => {
     try {
-      await axios.put(`http://localhost:8080/api/opportunities/${updatedOpportunity._id}`, updatedOpportunity);
+      await axios.put(`https://volunteer-backend-b6ip.onrender.com/api/opportunities/${updatedOpportunity._id}`, updatedOpportunity);
       const updatedOpportunities = opportunities.map(opportunity =>
         opportunity._id === updatedOpportunity._id ? updatedOpportunity : opportunity
       );

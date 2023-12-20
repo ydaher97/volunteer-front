@@ -44,7 +44,7 @@ const OpportunityCard = ({ opportunity }) => {
       try {
         const usersData = await Promise.all(
           opportunity.volunteers.map(async (volunteerId) => {
-            const response = await axios.get(`http://localhost:8080/api/users/${volunteerId}`);
+            const response = await axios.get(`https://volunteer-backend-b6ip.onrender.com/api/users/${volunteerId}`);
             return response.data;
           })
         );
@@ -63,7 +63,7 @@ const OpportunityCard = ({ opportunity }) => {
     console.log(opportunity._id);
     try {
       const updatedOpportunity = await axios.put(
-        `http://localhost:8080/api/opportunities/${opportunity._id}`,
+        `https://volunteer-backend-b6ip.onrender.com/api/opportunities/${opportunity._id}`,
         { userId: token }
       );
 

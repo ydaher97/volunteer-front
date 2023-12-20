@@ -66,7 +66,7 @@ const OrganizationPage = () => {
 
   const handleDeleteOrganization = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/organizations/${ordId}`);
+      await axios.delete(`https://volunteer-backend-b6ip.onrender.com/api/organizations/${ordId}`);
       setOrganization(null);
       navigate(-1)
 
@@ -89,7 +89,7 @@ const OrganizationPage = () => {
     e.preventDefault();
     try {
       console.log(opportunityData)
-      const response = await axios.post('http://localhost:8080/api/opportunities', opportunityData);
+      const response = await axios.post('https://volunteer-backend-b6ip.onrender.com/api/opportunities', opportunityData);
       console.log('Opportunity created:', response.data);
      
       setOpportunityData({

@@ -17,7 +17,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchOpportunities = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/opportunities');
+        const response = await axios.get('https://volunteer-backend-b6ip.onrender.com/api/opportunities');
         setOpportunities(response.data.opportunities);
       } catch (error) {
         console.error('Error fetching opportunities:', error);

@@ -26,7 +26,7 @@ const CalenderPage = () => {
   const fetchOpportunities = async (date) => {
     try {
       const formattedDate = new Date(date).toISOString().split('T')[0];
-      const response = await axios.get(`http://localhost:8080/api/opportunities?date=${formattedDate}`);
+      const response = await axios.get(`https://volunteer-backend-b6ip.onrender.com/api/opportunities?date=${formattedDate}`);
        setOpportunities(response.data.opportunities);
   
       const highlightedDates = response.data.opportunities.map((opportunity) =>
