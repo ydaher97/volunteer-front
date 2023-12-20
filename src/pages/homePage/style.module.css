@@ -1,0 +1,39 @@
+.cause{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.opportunity_list{
+    display: flex ;
+    align-items: center;
+  
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.list{
+    width: 100%;
+   display: flex;
+    align-items: center;
+   
+}
+
+/* @media screen() {
+    
+} */
+
+/* .card{
+    width: 60%;
+} */
+
+@media screen and (max-width: 600px) {
+    .card{
+        width: 100%;
+    }
+    .list{
+        flex-direction: column;
+    }
+  }

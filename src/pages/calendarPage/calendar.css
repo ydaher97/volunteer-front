@@ -1,0 +1,35 @@
+
+.container{
+  margin-top: 60px
+}
+
+  .calendar-day {
+    background-color: rgb(207 210 217) !important;
+    padding: 20px;
+    text-align: center;
+    border-radius: 50%; 
+  overflow: hidden;
+  width: 26% !important;
+  }
+ 
+  .highlighted{
+    background-color: #664DFF!important;
+    color: white !important;
+    padding: 20px;
+    text-align: center;
+    border-radius: 50%; 
+  overflow: hidden;
+  width: 26% !important;
+  }
+
+  .slick-prev,.slick-next{
+    background-color: #c0bfc4;
+    width: 31px;
+    height: 31px;
+    top: -28px;
+   
+  }
+
+  .slick-prev:hover,.slick-next:hover{
+    background-color: #664DFF;
+  }
