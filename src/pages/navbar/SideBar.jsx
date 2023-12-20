@@ -11,7 +11,7 @@ import styles from "./styles.module.css";
 
 import { useAuth } from '../../providers/authCotext';
 import HomeIcon from '@mui/icons-material/Home';
-import MapIcon from '@mui/icons-material/map';
+import MapIcon from '@mui/icons-material/Map';
 
 import PersonIcon from '@mui/icons-material/Person';
 import EventIcon from '@mui/icons-material/Event';
